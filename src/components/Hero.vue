@@ -4,7 +4,11 @@
     <b-container>
       <b-row class="d-flex justify-content-center align-items-center">
         <b-col col md="11" class="text-center">
-          <h1 id="hero-text">{{partner1}} <div id="hero-and">— and —</div>  {{partner2}}</h1>
+          <h1 id="hero-text">
+            {{$appConfig.NEWLYWEDS.PARTNER1}} 
+            <div id="hero-and">— {{$t("hero-and")}} —</div> 
+            {{$appConfig.NEWLYWEDS.PARTNER2}}
+          </h1>
         </b-col>
       </b-row>
     </b-container>
