@@ -6,6 +6,7 @@ import { BootstrapVue, IconsPlugin } from 'bootstrap-vue';
 import './assets/theme/scss/main.scss';
 import i18n from './i18n'
 import config from './config.js'
+import 'leaflet/dist/leaflet.css';
 
 Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)

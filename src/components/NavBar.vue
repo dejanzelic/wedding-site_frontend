@@ -1,5 +1,5 @@
 <template>
-<div >
+<div class="nav-centered">
     <div class="container">
       <b-navbar toggleable="lg" type="light">
         <b-navbar-brand href="#"
