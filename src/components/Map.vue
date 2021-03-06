@@ -61,9 +61,6 @@ export default {
       showMap: true
     };
   },
-    beforeCreate: function() {
-    console.log(this.$appConfig)
-  },
   methods: {
     zoomUpdate(zoom) {
       this.currentZoom = zoom;
