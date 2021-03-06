@@ -1,17 +1,17 @@
 <template>
     <div class="pt-4">
-    <div class="container">
-        <b-container fluid="lg">
-        <b-row>
-            <b-col md="12" lg="4" order-lg="1" order="2">
-                <Map></Map>
-            </b-col>
-            <b-col md="12" lg="8" order-lg="2" order="1">
-              <RSVPForm></RSVPForm>
-            </b-col>
-        </b-row>
-        </b-container>
-    </div>
+      <div class="container">
+          <b-container fluid="lg">
+            <b-row>
+                <b-col md="12" lg="4" order-lg="1" order="2">
+                    <Map></Map>
+                </b-col>
+                <b-col md="12" lg="8" order-lg="2" order="1">
+                  <RSVPForm></RSVPForm>
+                </b-col>
+            </b-row>
+          </b-container>
+      </div>
     </div>
 </template>
 

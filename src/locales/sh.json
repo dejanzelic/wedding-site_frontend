@@ -1,4 +1,8 @@
 {
   "message": "Ćao",
-  "hero-and": "i"
+  "hero-and": "i",
+  "rsvp-accept": "Prihvatamo",
+  "rsvp-decline": "Ne možemo doći",
+  "email-description": "Email (Neobavezna)",
+  "name-description": "Ime"
 }
