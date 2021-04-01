@@ -1,3 +1,5 @@
+import questions from './questions'
+
 export default {
     API_URL: 'https://local.dev',
     NEWLYWEDS: {
@@ -11,5 +13,6 @@ export default {
         ZIP: process.env.VUE_APP_ZIP || '12345',
         LAT: parseFloat(process.env.VUE_APP_LAT) || 0,
         LONG: parseFloat(process.env.VUE_APP_LONG) || 0
-    }
+    },
+    QUESTIONS: questions
   }

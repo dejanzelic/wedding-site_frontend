@@ -11,5 +11,6 @@ export default {
       ZIP: process.env.VUE_APP_ZIP,
       LAT: parseFloat(process.env.VUE_APP_LAT),
       LONG: parseFloat(process.env.VUE_APP_LONG)
-    }
+    },
+    QUESTIONS: questions
   }

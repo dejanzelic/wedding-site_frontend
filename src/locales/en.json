@@ -6,6 +6,8 @@
   "email-description": "Enter Email (Optional)",
   "name-description": "Name",
   "confirmed": "Thank you for RSVPing, please contact us if you need to make any changes.",
+  "long-confirmed": "Thank you for RSVPing. Your response has been recorded. The following questions are <strog>Optional</strong>",
+  "not-confirmed": "You must RSVP before answering these questions",
   "all-guests-coming": "Click if all guests are coming",
   "guest":"Guest",
   "guests":"Guests"

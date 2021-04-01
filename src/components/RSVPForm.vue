@@ -73,9 +73,6 @@
 export default {
   name: "RSVPForm",
   components: {},
-  created() {
-    this.$store.dispatch("fetchGuests", this.inviteCode);
-  },
   data() {
     return {
       inviteCode: this.$route.params.inviteCode,
