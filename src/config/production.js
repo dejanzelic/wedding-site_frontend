@@ -1,3 +1,5 @@
+import questions from './questions'
+
 export default {
     API_URL: 'https://production.com',
     NEWLYWEDS: {
