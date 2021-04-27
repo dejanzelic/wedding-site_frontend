@@ -10,5 +10,6 @@
   "not-confirmed": "You must RSVP before answering these questions",
   "all-guests-coming": "Click if all guests are coming",
   "guest":"Guest",
-  "guests":"Guests"
+  "guests":"Guests",
+  "coutdown-until": "Days until our wedding"
 }
