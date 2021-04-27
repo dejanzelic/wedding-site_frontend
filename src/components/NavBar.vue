@@ -1,9 +1,8 @@
 <template>
-<div class="nav-centered">
+  <div class="nav-centered">
     <div class="container">
       <b-navbar toggleable="lg" type="light">
-        <b-navbar-brand href="#"
-          class="font-weight-bold navbar-brand-centered">
+        <b-navbar-brand href="#" class="font-weight-bold navbar-brand-centered">
           zelic
         </b-navbar-brand>
         <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
@@ -13,15 +12,32 @@
           </b-navbar-nav>
           <b-navbar-nav class="ml-auto">
             <b-nav-item href="#">Home</b-nav-item>
+            <b-nav-item-dropdown text="🌐 Lang" right v-model="$i18n.locale">
+              <b-dropdown-item
+                v-for="(lang, i) in langs"
+                :key="`Lang${i}`"
+                :active="$i18n.locale === lang"
+                @click="changeLocale(lang)"
+                >{{ lang }}</b-dropdown-item
+              >
+            </b-nav-item-dropdown>
           </b-navbar-nav>
         </b-collapse>
       </b-navbar>
     </div>
-</div>
+  </div>
 </template>
 
 <script>
 export default {
-  name: 'NavBar',
+  name: "NavBar",
+  data() {
+    return { langs: this.$i18n.availableLocales };
+  },
+  methods: {
+    changeLocale(lang) {
+      this.$i18n.locale = lang;
+    },
+  },
 };
 </script>
