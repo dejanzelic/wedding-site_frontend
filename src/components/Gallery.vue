@@ -1,6 +1,6 @@
 <template>
   <div>
-    <CoolLightBox :items=images :index="index" @close="index = null">
+    <CoolLightBox :items="images" :index="index" @close="index = null">
     </CoolLightBox>
     <!-- TODO: Added ability for multilingual Alternative Text and Captions -->
     <b-container>
@@ -29,21 +29,34 @@ export default {
   name: "Gallery",
   data() {
     let i = require.context("@/assets/images/gallery", false, /^.*\.png$/);
-    let t = require.context("@/assets/images/gallery/thumbnails", false, /^.*\.png$/);
+    let t = require.context(
+      "@/assets/images/gallery/thumbnails",
+      false,
+      /^.*\.png$/
+    );
     let images = [];
-    i.keys().forEach(name => {
 
+    if (this.$appConfig.VIDEO) {
+      var thumbnail = this.$appConfig.VIDEO_THUMB
+      if(!this.$appConfig.VIDEO_THUMB.includes("http")){
+        thumbnail = t("./" + this.$appConfig.VIDEO_THUMB)
+      }
       images.push({
-        "src": i(name),
-        "thumb": t(name)
-        })
-
+        thumb: thumbnail,
+        src: this.$appConfig.VIDEO,
+      });
+    }
+    i.keys().forEach((name) => {
+      images.push({
+        src: i(name),
+        thumb: t(name),
+      });
     });
     return {
       images,
-      index: null
+      index: null,
     };
-  }
+  },
 };
 </script>
 

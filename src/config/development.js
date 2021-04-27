@@ -38,5 +38,7 @@ export default {
     OURSTORY: ourStory,
     SAVE_THE_DATE_VIEW: (process.env.VUE_APP_SAVE_THE_DATE_VIEW === 'true'),
     MAPS_LINK: process.env.VUE_APP_MAPS_LINK || "https://goo.gl/maps/gKTe9bbq8XHxCMMT6",
-    COVERIMAGE: coverImage
+    COVERIMAGE: coverImage,
+    VIDEO: process.env.VUE_APP_VIDEO || "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    VIDEO_THUMB: process.env.VUE_APP_VIDEO_THUMB || "https://picsum.photos/300/200"
 }
