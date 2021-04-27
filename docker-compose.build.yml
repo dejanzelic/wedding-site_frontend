@@ -3,11 +3,11 @@ version: '3.6'
 services:
   app: 
     volumes: 
-      - ./:/app:cached
+      - ./:/app
       - /app/node_modules
     command:
       - npm
       - "run"
-      - "serve" 
+      - "build" 
     environment:
       - CHOKIDAR_USEPOLLING=true
