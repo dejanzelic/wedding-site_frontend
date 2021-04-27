@@ -33,5 +33,6 @@ export default {
     MAPS_LINK: process.env.VUE_APP_MAPS_LINK,
     COVERIMAGE: '@/assets/images/cover_image.png',
     VIDEO: process.env.VUE_APP_VIDEO,
-    VIDEO_THUMB: process.env.VUE_APP_VIDEO_THUMB
+    VIDEO_THUMB: process.env.VUE_APP_VIDEO_THUMB,
+    SITE_TITLE: process.env.VUE_APP_SITE_TITLE
 }
