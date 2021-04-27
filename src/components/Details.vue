@@ -34,7 +34,6 @@ import Calendar from "v-calendar/lib/components/calendar.umd";
 import Map from "@/components/Map.vue";
 import WeddingDate from "@/components/WeddingDate.vue";
 import Countdown from "@/components/Countdown.vue";
-import moment from "moment";
 
 export default {
   name: "Details",
@@ -45,19 +44,12 @@ export default {
     Countdown
   },
   computed: {
-    prettyDate: function () {
-      return this.$appConfig.DATE.tz(this.$appConfig.TIMEZONE).format("LLLL");
-    },
     month: function () {
       return this.$appConfig.DATE.format("M");
     },
     year: function () {
       return this.$appConfig.DATE.format("Y");
-    },
-    daysLeft: function () {
-      var todaysdate = moment();
-      return this.$appConfig.DATE.diff(todaysdate, "days");
-    },
+    }
   },
   data() {
     return {
