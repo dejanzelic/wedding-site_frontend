@@ -28,8 +28,8 @@ export default {
   },
   name: "Gallery",
   data() {
-    let i = require.context("@/assets/images", false, /^.*\.png$/);
-    let t = require.context("@/assets/images/thumbnails", false, /^.*\.png$/);
+    let i = require.context("@/assets/images/gallery", false, /^.*\.png$/);
+    let t = require.context("@/assets/images/gallery/thumbnails", false, /^.*\.png$/);
     let images = [];
     i.keys().forEach(name => {
 

@@ -22,5 +22,7 @@ pnpm-debug.log*
 *.sln
 *.sw?
 
-src/assets/images/*.png
-src/assets/images/thumbnails/*.png
+src/assets/images/gallery/*.png
+src/assets/images/gallery/thumbnails/*.png
+src/assets/images/cover_image.png
+src/assets/images/ourStory

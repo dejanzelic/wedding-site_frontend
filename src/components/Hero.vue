@@ -3,7 +3,7 @@
   <section class="intro" style="background-size: cover;">
     <b-container>
       <b-row class="d-flex justify-content-center align-items-center">
-        <b-col col md="11" class="text-center">
+        <b-col col md="12" class="text-center">
           <h1 id="hero-text">
             {{$appConfig.NEWLYWEDS.PARTNER1}} 
             <div id="hero-and">— {{$t("hero-and")}} —</div> 

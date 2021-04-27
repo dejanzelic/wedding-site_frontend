@@ -28,5 +28,6 @@ export default {
   TIMEZONE: process.env.VUE_APP_TIMEZONE || 'America/Phoenix',
   QUESTIONS: questions,
   SAVE_THE_DATE_VIEW: (process.env.VUE_APP_SAVE_THE_DATE_VIEW === 'true'),
-  MAPS_LINK: process.env.VUE_APP_MAPS_LINK
+  MAPS_LINK: process.env.VUE_APP_MAPS_LINK,
+  COVERIMAGE: '@/assets/images/cover_image.png'
 }

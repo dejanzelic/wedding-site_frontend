@@ -1,4 +1,5 @@
 import questions from './questions'
+import ourStory from './ourStory'
 import moment from 'moment-timezone';
 
 let dateString = false
@@ -8,6 +9,12 @@ if (process.env.VUE_APP_WEDDING_DATE_UTC &&
     dateString =
         process.env.VUE_APP_WEDDING_DATE_UTC + " " +
         process.env.VUE_APP_WEDDING_TIME_UTC
+}
+var coverImage = ""
+try {
+    require('@/assets/images/cover_image.png')
+} catch (e) {
+    coverImage = "https://picsum.photos/1920/1080"
 }
 
 
@@ -28,6 +35,8 @@ export default {
     DATE: moment.utc(dateString),
     TIMEZONE: process.env.VUE_APP_TIMEZONE || 'America/Phoenix',
     QUESTIONS: questions,
+    OURSTORY: ourStory,
     SAVE_THE_DATE_VIEW: (process.env.VUE_APP_SAVE_THE_DATE_VIEW === 'true'),
-    MAPS_LINK: process.env.VUE_APP_MAPS_LINK || "https://goo.gl/maps/gKTe9bbq8XHxCMMT6"
+    MAPS_LINK: process.env.VUE_APP_MAPS_LINK || "https://goo.gl/maps/gKTe9bbq8XHxCMMT6",
+    COVERIMAGE: coverImage
 }

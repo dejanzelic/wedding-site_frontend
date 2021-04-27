@@ -9,11 +9,11 @@
         <b-collapse id="nav-collapse" is-nav>
           <b-navbar-nav>
             <b-nav-item :to="{ name: 'Home'}">Home</b-nav-item>
-            <b-nav-item :to="{ name: 'OurStory'}">Our Story</b-nav-item>
+            <b-nav-item :to="{ name: 'OurStory'}">{{ $t("our-story") }}</b-nav-item>
           </b-navbar-nav>
           <b-navbar-nav class="ml-auto">
-            <b-nav-item :to="{ name: 'Info'}">Info</b-nav-item>
-            <b-nav-item-dropdown text="🌐 Lang" right v-model="$i18n.locale">
+            <b-nav-item :to="{ name: 'Info'}">{{ $t("when-and-where") }}</b-nav-item>
+            <b-nav-item-dropdown :text="'🌐 ' + $t('language')" right v-model="$i18n.locale">
               <b-dropdown-item
                 v-for="(lang, i) in langs"
                 :key="`Lang${i}`"
