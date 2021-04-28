@@ -1,19 +1,29 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 const api = require('./api');
+const LANG_KEY = 'language'
 
+const initLang = (() => {
+  let lang = window.localStorage.getItem(LANG_KEY) || false
+  return lang
+})()
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
     guests: {},
-    guestsFetched: false
+    guestsFetched: false,
+    lang: initLang
   },
   mutations: {
     setGuests (state, data) {
       state.guests = data;
       state.guestsFetched = true;
+    },
+    onLangChanged (state, payload) {
+      window.localStorage.setItem(LANG_KEY, payload.lang)
+      state.lang = payload.lang
     }
   },
   actions: {
@@ -25,6 +35,9 @@ export default new Vuex.Store({
         commit("setGuests", response.data);
       }
     },
+    changeLanguage ({ commit }, payload) {
+      commit('onLangChanged', payload)
+    }
   },
   modules: {
   }

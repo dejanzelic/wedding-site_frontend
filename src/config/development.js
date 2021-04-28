@@ -1,6 +1,8 @@
 import questions from './questions'
 import ourStory from './ourStory'
 import moment from 'moment-timezone';
+import supportedLocales from "@/config/supported-locales"
+
 
 let dateString = false
 if (process.env.VUE_APP_WEDDING_DATE_UTC &&
@@ -41,5 +43,6 @@ export default {
     COVERIMAGE: coverImage,
     VIDEO: process.env.VUE_APP_VIDEO || "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
     VIDEO_THUMB: process.env.VUE_APP_VIDEO_THUMB || "https://picsum.photos/300/200",
-    SITE_TITLE: process.env.VUE_APP_SITE_TITLE || "Wedding Site"
+    SITE_TITLE: process.env.VUE_APP_SITE_TITLE || "Wedding Site",
+    LOCALES: supportedLocales
 }

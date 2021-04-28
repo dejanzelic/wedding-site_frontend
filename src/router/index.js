@@ -55,6 +55,8 @@ if (!config.SAVE_THE_DATE_VIEW) {
     })
 }
 
+routes.push({ path: "*", component: () => import('../views/PageNotFound.vue') })
+
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,

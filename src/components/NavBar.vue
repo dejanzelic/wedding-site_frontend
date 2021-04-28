@@ -15,11 +15,11 @@
             <b-nav-item :to="{ name: 'Info'}">{{ $t("when-and-where") }}</b-nav-item>
             <b-nav-item-dropdown :text="'🌐 ' + $t('language')" right v-model="$i18n.locale">
               <b-dropdown-item
-                v-for="(lang, i) in langs"
+                v-for="(lang, i) in Object.keys($appConfig.LOCALES)"
                 :key="`Lang${i}`"
                 :active="$i18n.locale === lang"
                 @click="changeLocale(lang)"
-                >{{ lang }}</b-dropdown-item
+                >{{ $appConfig.LOCALES[lang].name }}</b-dropdown-item
               >
             </b-nav-item-dropdown>
           </b-navbar-nav>
@@ -37,6 +37,8 @@ export default {
   },
   methods: {
     changeLocale(lang) {
+      this.$store.dispatch("changeLanguage", {lang: lang})
+      // Ideally this would be in the store, but I couldn't figure out how to access $i18n in the store to changes it
       this.$i18n.locale = lang;
     },
   },

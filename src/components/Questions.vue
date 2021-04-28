@@ -35,12 +35,12 @@ export default {
   name: "Questions",
   data() {
     const survey = new Survey.Model(this.$appConfig.QUESTIONS);
-    survey.locale = this.$i18n.locale;
+    survey.locale = this.lang;
     survey.showQuestionNumbers = "off";
     survey.completedHtml = "<span></span>";
     // TODO: post data to api
     survey.onComplete.add(function (result) {
-        alert("Result JSON:\n" + JSON.stringify(result.data, null, 3));
+      alert("Result JSON:\n" + JSON.stringify(result.data, null, 3));
     });
     return {
       survey: survey,
@@ -50,7 +50,17 @@ export default {
     guests() {
       return this.$store.state.guests;
     },
+    lang() {
+      return this.$store.state.lang;
+    },
   },
+  watch: {
+    // Vue Survey doesn't auto update the lang. Using veux to watch
+    lang (newLang) {
+      this.survey.locale = newLang;
+      this.survey.render();
+    }
+  }
 };
 </script>
 
