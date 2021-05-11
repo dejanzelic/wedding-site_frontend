@@ -2,9 +2,6 @@
   <div class="nav-centered">
     <div class="container">
       <b-navbar toggleable="lg" type="light">
-        <b-navbar-brand class="font-weight-bold navbar-brand-centered">
-          zelic
-        </b-navbar-brand>
         <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
         <b-collapse id="nav-collapse" is-nav>
           <b-navbar-nav>

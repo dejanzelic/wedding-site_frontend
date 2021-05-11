@@ -9,8 +9,8 @@
         <b-col md="12" lg="6" :order="getOrder(index,1)" mb-3>
           <img id="storyImg" :src="getImgUrl(story.image)" />
         </b-col>
-        <b-col md="12" lg="6" :order="getOrder(index,2)" class="text-center" mb-3>
-          <h2>{{ $t(story.content) }}</h2>
+        <b-col md="12" lg="6" :order="getOrder(index,2)" class="text-center" v-html="$t(story.content)" mb-3>
+          <!-- <h2>{{ $t(story.content) }}</h2> -->
         </b-col>
       </b-row>
     </div>
