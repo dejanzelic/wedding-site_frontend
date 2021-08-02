@@ -36,7 +36,7 @@ const routes = [
 if (!config.SAVE_THE_DATE_VIEW) {
   // Routes availible if not in Save the Date view
   routes.push({
-    path: '/i/:inviteCode',
+    path: '/:inviteCode',
     name: 'RSVP',
     component: () => import('../views/Invite.vue'),
     meta: {
@@ -45,7 +45,7 @@ if (!config.SAVE_THE_DATE_VIEW) {
     }
   },
     {
-      path: '/i/:inviteCode/q',
+      path: '/:inviteCode/q',
       name: 'Additional Information',
       component: () => import('../views/AdditionalInfo.vue'),
       meta: {
@@ -71,15 +71,15 @@ router.beforeEach((to, from, next) => {
 
   const previousNearestWithMeta = from.matched.slice().reverse().find(r => r.meta && r.meta.metaTags);
 
-  if(nearestWithTitle) {
+  if (nearestWithTitle) {
     document.title = nearestWithTitle.meta.title + " - " + config.SITE_TITLE;
-  } else if(previousNearestWithMeta) {
+  } else if (previousNearestWithMeta) {
     document.title = previousNearestWithMeta.meta.title + " - " + config.SITE_TITLE;
   }
 
   Array.from(document.querySelectorAll('[data-vue-router-controlled]')).map(el => el.parentNode.removeChild(el));
 
-  if(!nearestWithMeta) return next();
+  if (!nearestWithMeta) return next();
 
   nearestWithMeta.meta.metaTags.map(tagDef => {
     const tag = document.createElement('meta');
@@ -92,13 +92,14 @@ router.beforeEach((to, from, next) => {
 
     return tag;
   })
-  .forEach(tag => document.head.appendChild(tag));
+    .forEach(tag => document.head.appendChild(tag));
 
   next();
 });
 
 router.beforeEach((to, from, next) => {
   if (to.matched.some(record => record.meta.requiresGuests)) {
+    store.dispatch("saveInviteCode", to.params.inviteCode);
     store.dispatch("fetchGuests", to.params.inviteCode);
   }
   next()

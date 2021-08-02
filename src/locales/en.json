@@ -8,11 +8,14 @@
   "confirmed": "Thank you for RSVPing, please contact us if you need to make any changes.",
   "long-confirmed": "Thank you for RSVPing. Your response has been recorded. The following questions are <strog>Optional</strong>",
   "not-confirmed": "You must RSVP before answering these questions",
+  "INVITE_NOT_FOUND": "That invite code was not found, please try again",
   "all-guests-coming": "Click if all guests are coming",
   "guest":"Guest",
   "guests":"Guests",
   "coutdown-until": "Days until our wedding",
   "our-story":"Our Story",
   "when-and-where":"When & Where",
-  "language": "Lang"
+  "language": "Lang",
+  "rsvp-instructions":"Fill in the Invite Code found on your Details Card",
+  "submit": "Submit"
 }

@@ -23,7 +23,7 @@
         class="float-right all-coming"
         >{{ $t("all-guests-coming") }}</b-button
       >
-      <div v-for="(guest, index) in guests.list" :key="guest">
+      <div v-for="(guest, index) in guests.list" :key="index">
         <b-container fluid="lg">
           <b-row>
             <b-col md="12" lg="4">
