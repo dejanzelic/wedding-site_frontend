@@ -2,6 +2,9 @@ module.exports = {
   configureWebpack: {
     devtool: 'source-map'
   },
+  devServer: {
+    disableHostCheck: true
+  },
 
   pluginOptions: {
     i18n: {
