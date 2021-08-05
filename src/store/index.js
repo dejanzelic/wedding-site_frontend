@@ -19,51 +19,64 @@ export default new Vuex.Store({
     inviteCode: ""
   },
   mutations: {
-    setGuests (state, data) {
+    setGuests(state, data) {
       state.guests = data;
       state.guestsFetched = true;
     },
-    setError (state, data) {
+    setError(state, data) {
       state.error = data;
     },
-    setInviteCode (state, data) {
+    setInviteCode(state, data) {
       state.inviteCode = data;
     },
-    onLangChanged (state, payload) {
+    onLangChanged(state, payload) {
       window.localStorage.setItem(LANG_KEY, payload.lang)
       state.lang = payload.lang
     }
   },
   actions: {
     async fetchGuests({ commit, state, dispatch }, inviteCode) {
-      if (state.guestsFetched){
+      if (state.guestsFetched) {
         console.log("Data already fetched, ignoring")
-      }else{
+      } else {
         api.getGuests(inviteCode)
-        .then((r) => {
-          if(r.status === 200){
-            commit("setGuests", r.data);
-          }else{
-            dispatch("showError", r.data.message);
-          }
-        });
+          .then((r) => {
+            if (r.status === 200) {
+              commit("setGuests", r.data);
+            } else {
+              dispatch("showError", r.data.message);
+            }
+          });
       }
     },
-    saveInviteCode ({ commit }, payload) {
+    saveInviteCode({ commit }, payload) {
       commit('setInviteCode', payload)
     },
-    changeLanguage ({ commit }, payload) {
+    changeLanguage({ commit }, payload) {
       commit('onLangChanged', payload)
     },
-    showError({ commit, dispatch }, message){
-      commit('setError', {"message": message, "show": true})
+    showError({ commit, dispatch }, message) {
+      commit('setError', { "message": message, "show": true })
 
       setTimeout(() => {
         dispatch('clearError')
       }, 8000)
     },
-    clearError({ commit }){
+    clearError({ commit }) {
       commit('setError', {})
+    },
+    putInvite({ state }) {
+      api.putInvite(state.inviteCode, state.guests)
+    },
+    postAnswers({ state }, payload) {
+      let response = []
+      Object.keys(payload).forEach(key => {
+        response.push({
+          "name": key,
+          "answer": payload[key]
+        })
+      });
+      api.postAnswers(state.inviteCode, response)
     }
   },
   modules: {

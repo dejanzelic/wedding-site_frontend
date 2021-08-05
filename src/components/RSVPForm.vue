@@ -96,12 +96,14 @@ export default {
     onSubmit(event) {
       event.preventDefault();
       this.guests.confirmed = true;
-      alert(JSON.stringify(this.guests)); //@TODO: post data
+      this.$store.dispatch("putInvite")
+      this.$router.push(this.inviteCode + "/q");
     },
     onDecline() {
       this.guests.list.forEach((o, i, a) => (a[i].attending = false));
       this.guests.confirmed = true;
-      alert("Sorry you can't make it "); //@TODO: show message
+      this.guests.email = "NOTCOMING";
+      this.$store.dispatch("putInvite")
     },
   },
 };

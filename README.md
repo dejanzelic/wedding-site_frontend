@@ -30,4 +30,8 @@ VUE_APP_TIMEZONE - Timezone of wedding Example: America/Phoenix
 VUE_APP_MAPS_LINK - Where to link the map https://goo.gl/maps/FLvZXTsU6A5ExBx28
 VUE_APP_VIDEO - Optional, video to add to galleryhttps://www.youtube.com/watch?v=r_CcCnG7pIE
 VUE_APP_VIDEO_THUMB - file name/url of thumbnail for video. example: video_thumbnail.png (Place in the `assets/gallery/thumbnails` directory)
+VUE_APP_PRETTY_URL - Pretty URL to be displayed for guests to type in their code
 ```
+
+## TODO
+- Create message backup incase api server is down (email your rsvp to)

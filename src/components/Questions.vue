@@ -40,8 +40,8 @@ export default {
     survey.completedHtml = "<span></span>";
     // TODO: post data to api
     survey.onComplete.add(function (result) {
-      alert("Result JSON:\n" + JSON.stringify(result.data, null, 3));
-    });
+      this.$store.dispatch("postAnswers", result.data)
+    }.bind(this));
     return {
       survey: survey,
     };

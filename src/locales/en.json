@@ -3,7 +3,7 @@
   "hero-and": "and",
   "rsvp-accept": "Confirm",
   "rsvp-decline": "Sorry, can't make it",
-  "email-description": "Enter Email (Optional)",
+  "email-description": "Provide email for updates",
   "name-description": "Name",
   "confirmed": "Thank you for RSVPing, please contact us if you need to make any changes.",
   "long-confirmed": "Thank you for RSVPing. Your response has been recorded. The following questions are <strog>Optional</strong>",

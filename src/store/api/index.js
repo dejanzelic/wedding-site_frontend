@@ -3,4 +3,4 @@
 const realapi = require('../realapi');
 const mockapi = require('../mockapi');
 
-module.exports = process.env.NODE_ENV === 'development' ? mockapi : realapi ;
+module.exports = process.env.VUE_APP_API_URL === 'mockapi' ? mockapi : realapi ;
