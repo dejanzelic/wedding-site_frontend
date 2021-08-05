@@ -16,7 +16,9 @@ export default new Vuex.Store({
     guestsFetched: false,
     lang: initLang,
     error: {},
-    inviteCode: ""
+    inviteCode: "",
+    // assume healthy unless otherwise set
+    backendHealthy: true
   },
   mutations: {
     setGuests(state, data) {
@@ -32,7 +34,13 @@ export default new Vuex.Store({
     onLangChanged(state, payload) {
       window.localStorage.setItem(LANG_KEY, payload.lang)
       state.lang = payload.lang
-    }
+    },
+    healthy(state) {
+      state.backendHealthy = true;
+    },
+    unhealthy(state) {
+      state.backendHealthy = false;
+    },
   },
   actions: {
     async fetchGuests({ commit, state, dispatch }, inviteCode) {
@@ -64,6 +72,18 @@ export default new Vuex.Store({
     },
     clearError({ commit }) {
       commit('setError', {})
+    },
+    checkHealth({ commit }) {
+      api.getHealth()
+        .then(r => {
+          if (r.status === 200){
+            commit("healthy")
+          }else{
+            commit("unhealthy")
+          }
+        }).catch(() => {
+          commit("unhealthy")
+        })
     },
     putInvite({ state }) {
       api.putInvite(state.inviteCode, state.guests)

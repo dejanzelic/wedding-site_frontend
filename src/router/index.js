@@ -62,6 +62,11 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes
 })
+// Check if backend is healthy
+router.beforeEach((to, from, next) => {
+  store.dispatch("checkHealth");
+  next()
+})
 
 // https://www.digitalocean.com/community/tutorials/vuejs-vue-router-modify-head
 router.beforeEach((to, from, next) => {

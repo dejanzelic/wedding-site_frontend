@@ -3,6 +3,9 @@ const axios = require('axios')
 const config = require('../../config').default
 
 module.exports = {
+	async getHealth() {
+		return axios.get(config.API_URL + '/v1/healthcheck')
+	},
 	async getGuests(inviteCode) {
 		return axios.get(config.API_URL + '/v1/invite/' + inviteCode)
 	},

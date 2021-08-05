@@ -6,29 +6,7 @@
           <b-col col md="12" class="text-center">
             <h1>
               <img src="@/assets/images/rsvp.png" id="rsvp" />
-              <div id="subtext">
-                <!-- TODO load from lanauage -->
-                {{ $t("rsvp-instructions") }}
-              </div>
-              <div class="text-center">
-                <b-form inline v-on:submit.prevent="submit">
-                  <b-input-group
-                    :prepend="$appConfig.PRETTY_URL"
-                    id="url"
-                    class="mt-3 input-group-lg"
-                  >
-                    <b-form-input
-                      id="inviteCode"
-                      v-model="inviteCode"
-                    ></b-form-input>
-                    <b-input-group-append>
-                      <!-- TODO change text to be language dependent -->
-                      <b-button type="submit" variant="outline-success"
-                        >{{ $t("submit") }}</b-button
-                      >
-                    </b-input-group-append>
-                  </b-input-group>
-                </b-form>
+              <div id="subtext" v-html='$t("rsvp-fallback", { "email": $appConfig.CONTACTEMAIL})'>
               </div>
             </h1>
           </b-col>
@@ -41,20 +19,7 @@
 <script>
 export default {
   name: "InviteSearch",
-  computed: {
-    inviteCode: {
-      get() {
-        return this.$store.state.inviteCode;
-      },
-      set(value) {
-        this.$store.dispatch("saveInviteCode", value);
-      },
-    },
-  },
   methods: {
-    submit() {
-      this.$router.push("/" + this.inviteCode);
-    },
   },
 };
 </script>

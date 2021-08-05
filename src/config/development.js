@@ -45,5 +45,6 @@ export default {
     VIDEO: process.env.VUE_APP_VIDEO || "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
     VIDEO_THUMB: process.env.VUE_APP_VIDEO_THUMB || "https://picsum.photos/300/200",
     SITE_TITLE: process.env.VUE_APP_SITE_TITLE || "Wedding Site",
-    LOCALES: supportedLocales
+    LOCALES: supportedLocales,
+    CONTACTEMAIL: process.env.VUE_APP_CONTACT_EMAIL || "contactus@asdfasdfasdf.com"
 }

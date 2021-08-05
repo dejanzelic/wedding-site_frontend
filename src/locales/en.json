@@ -17,5 +17,6 @@
   "when-and-where":"When & Where",
   "language": "Lang",
   "rsvp-instructions":"Fill in the Invite Code found on your Details Card",
-  "submit": "Submit"
+  "submit": "Submit",
+  "rsvp-fallback": "Please <a href='mailto:{email}?subject=RSVP'>Email Us</a> with the list of people who will be attending"
 }

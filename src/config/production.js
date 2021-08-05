@@ -37,5 +37,7 @@ export default {
     VIDEO: process.env.VUE_APP_VIDEO,
     VIDEO_THUMB: process.env.VUE_APP_VIDEO_THUMB,
     SITE_TITLE: process.env.VUE_APP_SITE_TITLE,
-    LOCALES: supportedLocales
+    LOCALES: supportedLocales,
+    CONTACTEMAIL: process.env.VUE_APP_CONTACT_EMAIL
+
 }
