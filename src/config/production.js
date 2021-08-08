@@ -13,8 +13,8 @@ if (process.env.VUE_APP_WEDDING_DATE_UTC &&
 }
 
 export default {
-    API_URL: process.env.API_URL,
-    PRETTY_URL: process.env.PRETTY_URL,
+    API_URL: process.env.VUE_APP_API_URL,
+    PRETTY_URL: process.env.VUE_APP_PRETTY_URL,
     NEWLYWEDS: {
         PARTNER1: process.env.VUE_APP_PARTNER1_NAME,
         PARTNER2: process.env.VUE_APP_PARTNER2_NAME
