@@ -34,7 +34,6 @@ export default new Vuex.Store({
       state.inviteCode = data;
     },
     setLang(state, payload) {
-      console.log(payload)
       window.localStorage.setItem(LANG_KEY, payload)
       state.lang = payload
       i18n.locale = payload;
@@ -56,8 +55,6 @@ export default new Vuex.Store({
             if (r.status === 200) {
               commit("setGuests", r.data);
               if (r.data.language) {
-                console.log("Lang from db")
-                console.log(r.data.language)
                 commit('setLang', r.data.language)
               }
             } else {

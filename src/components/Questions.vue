@@ -35,10 +35,9 @@ export default {
   name: "Questions",
   data() {
     const survey = new Survey.Model(this.$appConfig.QUESTIONS);
-    survey.locale = this.lang;
+    survey.locale = this.$store.state.lang;
     survey.showQuestionNumbers = "off";
     survey.completedHtml = "<span></span>";
-    // TODO: post data to api
     survey.onComplete.add(function (result) {
       this.$store.dispatch("postAnswers", result.data)
     }.bind(this));
