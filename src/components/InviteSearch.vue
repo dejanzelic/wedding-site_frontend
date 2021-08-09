@@ -18,6 +18,7 @@
                   >
                     <b-form-input
                       id="inviteCode"
+                      autocomplete='off'
                       v-model="inviteCode"
                     ></b-form-input>
                     <b-input-group-append>
