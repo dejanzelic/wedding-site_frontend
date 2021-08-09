@@ -35,9 +35,7 @@ export default {
   },
   methods: {
     changeLocale(lang) {
-      this.$store.dispatch("changeLanguage", {lang: lang})
-      // Ideally this would be in the store, but I couldn't figure out how to access $i18n in the store to change it
-      // this.$i18n.locale = lang;
+      this.$store.dispatch("changeLanguage",  lang)
     },
   },
 };
