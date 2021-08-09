@@ -52,13 +52,15 @@ export default new Vuex.Store({
       } else {
         api.getGuests(inviteCode)
           .then((r) => {
-            if (r.status === 200) {
-              commit("setGuests", r.data);
-              if (r.data.language) {
-                commit('setLang', r.data.language)
-              }
+            commit("setGuests", r.data);
+            if (r.data.language) {
+              commit('setLang', r.data.language)
+            }
+          }).catch(err => {
+            if (err.response.status === 404) {
+              dispatch("showError", err.response.data.message);
             } else {
-              dispatch("showError", r.data.message);
+              dispatch("showError", "Something went wrong");
             }
           });
       }
@@ -91,10 +93,13 @@ export default new Vuex.Store({
           commit("unhealthy")
         })
     },
-    putInvite({ state }) {
+    putInvite({ state, dispatch }) {
       api.putInvite(state.inviteCode, state.guests)
+        .catch(() => {
+          dispatch("showError", "Something went wrong");
+        });
     },
-    postAnswers({ state }, payload) {
+    postAnswers({ state, dispatch }, payload) {
       let response = []
       Object.keys(payload).forEach(key => {
         response.push({
@@ -103,6 +108,9 @@ export default new Vuex.Store({
         })
       });
       api.postAnswers(state.inviteCode, response)
+        .catch(() => {
+          dispatch("showError", "Something went wrong");
+        });
     }
   },
   modules: {
