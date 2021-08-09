@@ -18,13 +18,16 @@
                   >
                     <b-form-input
                       id="inviteCode"
-                      autocomplete='off'
+                      autocomplete="off"
+                      autocorrect="off"
+                      autocapitalize="off"
+                      spellcheck="false"
                       v-model="inviteCode"
                     ></b-form-input>
                     <b-input-group-append>
-                      <b-button type="submit" variant="outline-success"
-                        >{{ $t("submit") }}</b-button
-                      >
+                      <b-button type="submit" variant="outline-success">{{
+                        $t("submit")
+                      }}</b-button>
                     </b-input-group-append>
                   </b-input-group>
                 </b-form>
