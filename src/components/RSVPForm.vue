@@ -49,22 +49,24 @@
             </b-col>
           </b-row>
         </b-container>
-        <hr :hidden="index === (guests.list.length - 1)" />
+        <hr :hidden="index === guests.list.length - 1" />
       </div>
-      <b-button
-        @click="onDecline()"
-        variant="secondary"
-        id="decline"
-        :hidden="guests.confirmed"
-        >{{ $t("rsvp-decline") }}</b-button
-      >
-      <b-button
-        type="submit"
-        variant="primary"
-        class="float-right"
-        :hidden="guests.confirmed"
-        >{{ $t("rsvp-accept") }}</b-button
-      >
+      <div class="mb-3">
+        <b-button
+          @click="onDecline()"
+          variant="secondary"
+          id="decline"
+          :hidden="guests.confirmed"
+          >{{ $t("rsvp-decline") }}</b-button
+        >
+        <b-button
+          type="submit"
+          variant="primary"
+          class="float-right"
+          :hidden="guests.confirmed"
+          >{{ $t("rsvp-accept") }}</b-button
+        >
+      </div>
     </b-form>
   </div>
 </template>
@@ -96,14 +98,14 @@ export default {
     onSubmit(event) {
       event.preventDefault();
       this.guests.confirmed = true;
-      this.$store.dispatch("putInvite")
+      this.$store.dispatch("putInvite");
       this.$router.push(this.inviteCode + "/q");
     },
     onDecline() {
       this.guests.list.forEach((o, i, a) => (a[i].attending = false));
       this.guests.confirmed = true;
       this.guests.email = "NOTCOMING";
-      this.$store.dispatch("putInvite")
+      this.$store.dispatch("putInvite");
     },
   },
 };
@@ -113,5 +115,4 @@ export default {
 .all-coming {
   font-size: 11px;
 }
-
 </style>

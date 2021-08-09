@@ -33,7 +33,26 @@ export default {
         CITY: process.env.VUE_APP_CITY || 'Lasning',
         ZIP: process.env.VUE_APP_ZIP || '12345',
         LAT: parseFloat(process.env.VUE_APP_LAT) || 0,
-        LONG: parseFloat(process.env.VUE_APP_LONG) || 0
+        LONG: parseFloat(process.env.VUE_APP_LONG) || 0,
+        RIDESHARE: {
+            DISPLAY: (process.env.VUE_APP_RIDESHARE_ADDRESS != undefined),
+            ADDRESS: process.env.VUE_APP_RIDESHARE_ADDRESS || '123 W South st',
+            STATE: process.env.VUE_APP_RIDESHARE_STATE || 'MI',
+            CITY: process.env.VUE_APP_RIDESHARE_CITY || 'Lasning',
+            ZIP: process.env.VUE_APP_RIDESHARE_ZIP || '12345',
+            LAT: parseFloat(process.env.VUE_APP_RIDESHARE_LAT) || 0,
+            LONG: parseFloat(process.env.VUE_APP_RIDESHARE_LONG) || 0,
+        },
+        PARKING: {
+            DISPLAY: (process.env.VUE_APP_PARKING_ADDRESS != undefined),
+            ADDRESS: process.env.VUE_APP_PARKING_ADDRESS || '123 W South st',
+            STATE: process.env.VUE_APP_PARKING_STATE || 'MI',
+            CITY: process.env.VUE_APP_PARKING_CITY || 'Lasning',
+            ZIP: process.env.VUE_APP_PARKING_ZIP || '12345',
+            LAT: parseFloat(process.env.VUE_APP_PARKING_LAT) || 0,
+            LONG: parseFloat(process.env.VUE_APP_PARKING_LONG) || 0,
+            MAPS_LINK: process.env.VUE_APP_PARKING_MAPS_LINK || "https://goo.gl/maps/gKTe9bbq8XHxCMMT6",
+        }
     },
     DATE: moment.utc(dateString),
     TIMEZONE: process.env.VUE_APP_TIMEZONE || 'America/Phoenix',
@@ -46,5 +65,12 @@ export default {
     VIDEO_THUMB: process.env.VUE_APP_VIDEO_THUMB || "https://picsum.photos/300/200",
     SITE_TITLE: process.env.VUE_APP_SITE_TITLE || "Wedding Site",
     LOCALES: supportedLocales,
-    CONTACTEMAIL: process.env.VUE_APP_CONTACT_EMAIL || "contactus@asdfasdfasdf.com"
+    CONTACTEMAIL: process.env.VUE_APP_CONTACT_EMAIL || "contactus@asdfasdfasdf.com",
+    SHUTTLE: {
+        RUN: (process.env.VUE_APP_SHUTTLE === 'true'),
+        START: process.env.VUE_APP_SHUTTLE_START || "12:30PM",
+        END: process.env.VUE_APP_SHUTTLE_END || "12:30AM",
+
+    },
+
 }

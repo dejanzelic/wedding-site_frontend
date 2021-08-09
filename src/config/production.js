@@ -25,7 +25,26 @@ export default {
         CITY: process.env.VUE_APP_CITY,
         ZIP: process.env.VUE_APP_ZIP,
         LAT: parseFloat(process.env.VUE_APP_LAT),
-        LONG: parseFloat(process.env.VUE_APP_LONG)
+        LONG: parseFloat(process.env.VUE_APP_LONG),
+        RIDESHARE: {
+            DISPLAY: (process.env.VUE_APP_RIDESHARE_ADDRESS != undefined),
+            ADDRESS: process.env.VUE_APP_RIDESHARE_ADDRESS,
+            STATE: process.env.VUE_APP_RIDESHARE_STATE,
+            CITY: process.env.VUE_APP_RIDESHARE_CITY,
+            ZIP: process.env.VUE_APP_RIDESHARE_ZIP,
+            LAT: parseFloat(process.env.VUE_APP_RIDESHARE_LAT),
+            LONG: parseFloat(process.env.VUE_APP_RIDESHARE_LONG),
+        },
+        PARKING: {
+            DISPLAY: (process.env.VUE_APP_PARKING_ADDRESS != undefined),
+            ADDRESS: process.env.VUE_APP_PARKING_ADDRESS,
+            STATE: process.env.VUE_APP_PARKING_STATE,
+            CITY: process.env.VUE_APP_PARKING_CITY,
+            ZIP: process.env.VUE_APP_PARKING_ZIP,
+            LAT: parseFloat(process.env.VUE_APP_PARKING_LAT),
+            LONG: parseFloat(process.env.VUE_APP_PARKING_LONG),
+            MAPS_LINK: process.env.VUE_APP_PARKING_MAPS_LINK,
+        }
     },
     DATE: moment.utc(dateString),
     TIMEZONE: process.env.VUE_APP_TIMEZONE,
@@ -38,6 +57,10 @@ export default {
     VIDEO_THUMB: process.env.VUE_APP_VIDEO_THUMB,
     SITE_TITLE: process.env.VUE_APP_SITE_TITLE,
     LOCALES: supportedLocales,
-    CONTACTEMAIL: process.env.VUE_APP_CONTACT_EMAIL
-
+    CONTACTEMAIL: process.env.VUE_APP_CONTACT_EMAIL,
+    SHUTTLE: {
+        RUN: (process.env.VUE_APP_SHUTTLE === 'true'),
+        START: process.env.VUE_APP_SHUTTLE_START || "12:30PM",
+        END: process.env.VUE_APP_SHUTTLE_END || "12:30AM"
+    },
 }

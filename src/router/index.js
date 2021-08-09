@@ -35,15 +35,24 @@ const routes = [
 
 if (!config.SAVE_THE_DATE_VIEW) {
   // Routes availible if not in Save the Date view
-  routes.push({
-    path: '/:inviteCode',
-    name: 'RSVP',
-    component: () => import('../views/Invite.vue'),
-    meta: {
-      requiresGuests: true,
-      title: 'RSVP'
-    }
-  },
+  routes.push(
+    {
+      path: '/rsvp',
+      name: 'RSVP-Search',
+      component: () => import('../views/Invite.vue'),
+      meta: {
+        title: 'When and Where',
+      }
+    },
+    {
+      path: '/:inviteCode',
+      name: 'RSVP',
+      component: () => import('../views/Invite.vue'),
+      meta: {
+        requiresGuests: true,
+        title: 'RSVP'
+      }
+    },
     {
       path: '/:inviteCode/q',
       name: 'Additional Information',
@@ -52,7 +61,8 @@ if (!config.SAVE_THE_DATE_VIEW) {
         requiresGuests: true,
         title: 'Questions'
       }
-    })
+    }
+  )
 }
 
 routes.push({ path: "*", component: () => import('../views/PageNotFound.vue') })

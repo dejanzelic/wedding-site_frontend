@@ -5,10 +5,11 @@
         <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
         <b-collapse id="nav-collapse" is-nav>
           <b-navbar-nav>
-            <b-nav-item :to="{ name: 'Home'}">Home</b-nav-item>
+            <b-nav-item :to="{ name: 'Home'}">{{ $t("home") }}</b-nav-item>
             <b-nav-item :to="{ name: 'OurStory'}">{{ $t("our-story") }}</b-nav-item>
           </b-navbar-nav>
           <b-navbar-nav class="ml-auto">
+            <b-nav-item v-if="!$appConfig.SAVE_THE_DATE_VIEW" :to="{ name: 'RSVP-Search'}">{{ $t("RSVP") }}</b-nav-item>
             <b-nav-item :to="{ name: 'Info'}">{{ $t("when-and-where") }}</b-nav-item>
             <b-nav-item-dropdown :text="'🌐 ' + $t('language')" right v-model="$i18n.locale">
               <b-dropdown-item
@@ -35,8 +36,8 @@ export default {
   methods: {
     changeLocale(lang) {
       this.$store.dispatch("changeLanguage", {lang: lang})
-      // Ideally this would be in the store, but I couldn't figure out how to access $i18n in the store to changes it
-      this.$i18n.locale = lang;
+      // Ideally this would be in the store, but I couldn't figure out how to access $i18n in the store to change it
+      // this.$i18n.locale = lang;
     },
   },
 };

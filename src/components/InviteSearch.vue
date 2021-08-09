@@ -7,7 +7,6 @@
             <h1>
               <img src="@/assets/images/rsvp.png" id="rsvp" />
               <div id="subtext">
-                <!-- TODO load from lanauage -->
                 {{ $t("rsvp-instructions") }}
               </div>
               <div class="text-center">
@@ -22,7 +21,6 @@
                       v-model="inviteCode"
                     ></b-form-input>
                     <b-input-group-append>
-                      <!-- TODO change text to be language dependent -->
                       <b-button type="submit" variant="outline-success"
                         >{{ $t("submit") }}</b-button
                       >

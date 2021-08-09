@@ -6,11 +6,17 @@
       :key="index"
     >
       <b-row>
-        <b-col md="12" lg="6" :order="getOrder(index,1)" mb-3>
+        <b-col md="12" lg="6" :order="getOrder(index, 1)" mb-3>
           <img id="storyImg" :src="getImgUrl(story.image)" />
         </b-col>
-        <b-col md="12" lg="6" :order="getOrder(index,2)" class="text-center" v-html="$t(story.content)" mb-3>
-          <!-- <h2>{{ $t(story.content) }}</h2> -->
+        <b-col
+          md="12"
+          lg="6"
+          :order="getOrder(index, 2)"
+          class="text-center"
+          v-html="$t(story.content)"
+          mb-3
+        >
         </b-col>
       </b-row>
     </div>
@@ -34,17 +40,17 @@ export default {
         }
       }
     },
-    getOrder(index, original){
-      if (index % 2 === 0){
-        return original
-      }else{
-        if (original === 1){
-          return 2
-        }else{
-          return 1
+    getOrder(index, original) {
+      if (index % 2 === 0) {
+        return original;
+      } else {
+        if (original === 1) {
+          return 2;
+        } else {
+          return 1;
         }
       }
-    }
+    },
   },
   data() {
     return {

@@ -1,7 +1,7 @@
 <template>
   <div class="pt-4">
     <div class="container">
-      <b-container fluid="lg">
+      <b-container fluid="lg" class="mb-5">
         <b-row>
           <b-col md="12" lg="7" order-lg="1" order="2" mb-3>
             <Map></Map>
@@ -24,6 +24,7 @@
             </h3>
           </b-col>
         </b-row>
+        <Transportation></Transportation>
       </b-container>
     </div>
   </div>
@@ -34,6 +35,7 @@ import Calendar from "v-calendar/lib/components/calendar.umd";
 import Map from "@/components/Map.vue";
 import WeddingDate from "@/components/WeddingDate.vue";
 import Countdown from "@/components/Countdown.vue";
+import Transportation from "@/components/Transportation.vue";
 
 export default {
   name: "Details",
@@ -41,7 +43,8 @@ export default {
     Map,
     Calendar,
     WeddingDate,
-    Countdown
+    Countdown,
+    Transportation
   },
   computed: {
     month: function () {

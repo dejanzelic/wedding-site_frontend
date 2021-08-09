@@ -2,9 +2,11 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 const api = require('./api');
 const LANG_KEY = 'language'
+import i18n from '../i18n'
 
 const initLang = (() => {
   let lang = window.localStorage.getItem(LANG_KEY) || false
+  i18n.locale = lang;
   return lang
 })()
 
@@ -31,9 +33,10 @@ export default new Vuex.Store({
     setInviteCode(state, data) {
       state.inviteCode = data;
     },
-    onLangChanged(state, payload) {
+    setLang(state, payload) {
       window.localStorage.setItem(LANG_KEY, payload.lang)
       state.lang = payload.lang
+      i18n.locale = state.lang;
     },
     healthy(state) {
       state.backendHealthy = true;
@@ -51,6 +54,9 @@ export default new Vuex.Store({
           .then((r) => {
             if (r.status === 200) {
               commit("setGuests", r.data);
+              if (r.data.language) {
+                commit('setLang', r.data.language)
+              }
             } else {
               dispatch("showError", r.data.message);
             }
@@ -61,7 +67,7 @@ export default new Vuex.Store({
       commit('setInviteCode', payload)
     },
     changeLanguage({ commit }, payload) {
-      commit('onLangChanged', payload)
+      commit('setLang', payload)
     },
     showError({ commit, dispatch }, message) {
       commit('setError', { "message": message, "show": true })
@@ -76,9 +82,9 @@ export default new Vuex.Store({
     checkHealth({ commit }) {
       api.getHealth()
         .then(r => {
-          if (r.status === 200){
+          if (r.status === 200) {
             commit("healthy")
-          }else{
+          } else {
             commit("unhealthy")
           }
         }).catch(() => {

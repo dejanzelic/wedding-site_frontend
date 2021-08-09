@@ -2,15 +2,10 @@ import Vue from 'vue'
 import VueI18n from 'vue-i18n'
 import getBrowserLocale from "@/util/get-browser-locale"
 import { supportedLocalesInclude, supportedReplacmentLocalesInclude } from "./util/supported-locales"
-import store from './store'
 
 Vue.use(VueI18n)
 
 function getStartingLocale() {
-  //If already stored in state / local storage
-  if(store.state.lang){
-    return store.state.lang
-  }
   const browserLocale = getBrowserLocale({ countryCodeOnly: true })
 
   if (supportedLocalesInclude(browserLocale)) {
@@ -40,7 +35,6 @@ function loadLocaleMessages () {
 }
 
 const startingLocale = getStartingLocale()
-store.dispatch("changeLanguage", {lang: startingLocale})
 
 export default new VueI18n({
   locale: startingLocale,
