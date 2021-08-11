@@ -78,18 +78,20 @@ export default {
   data() {
     return {
       inviteCode: this.$route.params.inviteCode,
-      selected: null,
-      options: [
-        { value: null, text: this.$t("will-you-celebrate") },
-        { value: true, text: this.$t("yes") },
-        { value: false, text: this.$t("no") },
-      ],
+      selected: null
     };
   },
   computed: {
     guests() {
       return this.$store.state.guests;
     },
+    options() {
+      return [
+        { value: null, text: this.$t("will-you-celebrate") },
+        { value: true, text: this.$t("yes") },
+        { value: false, text: this.$t("no") },
+      ]
+    }
   },
   methods: {
     allComing() {
