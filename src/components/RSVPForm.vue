@@ -80,9 +80,9 @@ export default {
       inviteCode: this.$route.params.inviteCode,
       selected: null,
       options: [
-        { value: null, text: "Will you celebrate with us?" },
-        { value: true, text: "Yes" },
-        { value: false, text: "No" },
+        { value: null, text: this.$t("will-you-celebrate") },
+        { value: true, text: this.$t("yes") },
+        { value: false, text: this.$t("no") },
       ],
     };
   },

@@ -21,8 +21,11 @@
 	"when-and-where": "When & Where",
 	"transportation": "Transportation",
 	"shuttle-details": "Shuttle service begins at {start} and ends at {end}. Please park at the desginated parking lot marked on the map. Please <a href='mailto:{email}?subject=Parking'>contact us</a> if you require special parking accomodations",
-  "rideshare-drop-off": "Rideshare Drop-off",
-  "parking": "Parking",
-  "RSVP":"RSVP",
-  "home": "Home"
+	"rideshare-drop-off": "Rideshare Drop-off",
+	"parking": "Parking",
+	"RSVP": "RSVP",
+	"home": "Home",
+	"will-you-celebrate": "Will you celebrate with us?",
+	"yes": "Yes",
+	"no": "No"
 }

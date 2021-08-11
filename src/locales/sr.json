@@ -1,9 +1,9 @@
 {
 	"INVITE_NOT_FOUND": "Pozivnice nije pronađen. Pokušajte ponovo",
-	"all-guests-coming": "Kliknite ovde ako dolaze svi gosti",
+	"all-guests-coming": "Kliknite ovde ako svi gosti dolaze",
 	"confirmed": "Hvala vam na odgovoru na poziv, kontaktirajte nas ako trebate da izvršite bilo kakve promene.",
 	"coutdown-until": "Dana do svadbe",
-	"email-description": "Obezbedite adresu e-pošte.",
+	"email-description": "Obezbedite adresu E-adresa.",
 	"guest": "Gost",
 	"guests": "Gosti",
 	"hero-and": "i",
@@ -19,10 +19,13 @@
 	"rsvp-instructions": "Popunite Šifru za poziv koji se nalazi na vašoj pozivnoj kartici",
 	"submit": "Prosledi",
 	"when-and-where": "Kada i Gdje",
-  "transportation": "Transport",
+	"transportation": "Transport",
 	"shuttle-details": "Usluga prevoza počinje u {start} i završava u {end}. Molimo vas da parkirate na predviđenom parkingu označenom na mapi. <a href='mailto:{email}?subject=Parking'>Kontaktirajte nas </a> ako vam trebaju posebna mesta za parkiranje.",
-  "rideshare-drop-off": "Rideshare Drop-off",
-  "parking": "Parking",
-  "RSVP":"Odgovor",
-  "home": "Početak"
+	"rideshare-drop-off": "Rideshare Drop-off",
+	"parking": "Parking",
+	"RSVP": "Odgovor",
+	"home": "Početak",
+	"will-you-celebrate": "Možete li slaviti sa nama?",
+	"yes": "Da",
+	"no": "Ne"
 }
