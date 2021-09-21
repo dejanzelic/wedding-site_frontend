@@ -55,7 +55,7 @@ export default {
   data() {
     return {
       images: require.context("@/assets/images/ourStory", false, /\.png$/),
-      config: this.$appConfig.OURSTORY,
+      config: this.$appConfig.EXTRAS,
     };
   },
 };

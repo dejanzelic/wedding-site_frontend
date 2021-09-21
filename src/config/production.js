@@ -1,5 +1,5 @@
 import questions from './questions'
-import ourStory from './ourStory'
+import extra from './extra'
 import moment from 'moment-timezone';
 import supportedLocales from "@/config/supported-locales"
 
@@ -49,7 +49,7 @@ export default {
     DATE: moment.utc(dateString),
     TIMEZONE: process.env.VUE_APP_TIMEZONE,
     QUESTIONS: questions,
-    OURSTORY: ourStory,
+    EXTRAS: extra,
     SAVE_THE_DATE_VIEW: (process.env.VUE_APP_SAVE_THE_DATE_VIEW === 'true'),
     MAPS_LINK: process.env.VUE_APP_MAPS_LINK,
     COVERIMAGE: '@/assets/images/cover_image.png',

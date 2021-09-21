@@ -1,4 +1,9 @@
 module.exports = {
+    async getHealth() {
+		return {
+            status: 200,
+            data: {}}
+	},
     async getGuests(inviteCode) {
         switch (inviteCode) {
             case "noemail":

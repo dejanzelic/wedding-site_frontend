@@ -1,5 +1,5 @@
 import questions from './questions'
-import ourStory from './ourStory'
+import extra from './extra'
 import moment from 'moment-timezone';
 import supportedLocales from "@/config/supported-locales"
 
@@ -57,7 +57,7 @@ export default {
     DATE: moment.utc(dateString),
     TIMEZONE: process.env.VUE_APP_TIMEZONE || 'America/Phoenix',
     QUESTIONS: questions,
-    OURSTORY: ourStory,
+    EXTRAS: extra,
     SAVE_THE_DATE_VIEW: (process.env.VUE_APP_SAVE_THE_DATE_VIEW === 'true'),
     MAPS_LINK: process.env.VUE_APP_MAPS_LINK || "https://goo.gl/maps/gKTe9bbq8XHxCMMT6",
     COVERIMAGE: coverImage,
@@ -70,7 +70,6 @@ export default {
         RUN: (process.env.VUE_APP_SHUTTLE === 'true'),
         START: process.env.VUE_APP_SHUTTLE_START || "12:30PM",
         END: process.env.VUE_APP_SHUTTLE_END || "12:30AM",
-
     },
 
 }
