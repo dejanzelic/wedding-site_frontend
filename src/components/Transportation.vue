@@ -1,11 +1,11 @@
 <template>
   <div>
     <b-row>
-      <b-col md="12" lg="7" order-lg="1" order="2" mb-3>
+      <b-col md="12" lg="7" order-lg="1" order="2" class="mb-5">
         <h2>{{ $t("parking") }}</h2>
         <img class="w-100" src="@/assets/images/transportMap.png" />
       </b-col>
-      <b-col md="12" lg="4" order-lg="2" order="1" class="text-center" mb-3>
+      <b-col md="12" lg="4" order-lg="2" order="1" class="text-center mb-5" >
         <h1>{{ $t("transportation") }}</h1>
         <hr />
         <div v-if="$appConfig.LOCATION.RIDESHARE.DISPLAY">

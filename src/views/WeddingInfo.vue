@@ -1,16 +1,26 @@
 <template>
   <main>
-    <Details />
+    <div class="pt-4">
+      <div class="container">
+        <b-container fluid="lg" class="mb-5">
+          <MapAndDate />
+          <Transportation></Transportation>
+        </b-container>
+      </div>
+    </div>
   </main>
 </template>
 
 <script>
-import Details from "@/components/Details.vue";
+import MapAndDate from "@/components/MapAndDate.vue";
+import Transportation from "@/components/Transportation.vue";
+
 
 export default {
   name: "WeddingInfo",
   components: {
-    Details,
+    MapAndDate,
+    Transportation,
   },
 };
 </script>

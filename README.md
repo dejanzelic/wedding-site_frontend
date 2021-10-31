@@ -33,5 +33,6 @@ VUE_APP_VIDEO_THUMB - file name/url of thumbnail for video. example: video_thumb
 VUE_APP_PRETTY_URL - Pretty URL to be displayed for guests to type in their code
 ```
 
-## TODO
-- Create message backup incase api server is down (email your rsvp to)
+## Desgin Decisions
+
+Having the frontend do the configuration for the date, names, etc makes it more difficult to just spin up the site and customize to your liking. This is because the front-end is "compiled" and then served. However, this offers us one big advantage: stability. Instead of relying on a server to provide that information, we can compile and have the site work 100% statically. If the backend crashes or the database becomes corrupt, the guests still get 90% of the functionality. There is even a backup RSVP system to let guests email RSVP instead of programatically RSVP. 
