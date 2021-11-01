@@ -28,6 +28,7 @@ export default {
     Custom: () => import("@/components/Custom.vue"), //eslint-disable-line
     MapAndDate: () => import("@/components/MapAndDate.vue"), //eslint-disable-line
     Transportation: () => import("@/components/Transportation.vue"), //eslint-disable-line
+    MapAndDate: () => import("@/components/MapAndDate.vue"), //eslint-disable-line
   },
   created() {
     this.$appConfig.EXTRAS.dynamicHomepage.forEach((e) => {

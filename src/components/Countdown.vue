@@ -13,7 +13,7 @@ export default {
   computed: {
     daysLeft: function () {
       var todaysdate = moment();
-      return this.$appConfig.DATE.diff(todaysdate, "days");
+      return this.$appConfig.DATE.diff(todaysdate, "days") + 1;
     },
   }
 };
