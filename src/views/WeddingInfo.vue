@@ -1,6 +1,6 @@
 <template>
   <main>
-doc    <div class="pt-4">
+    <div class="pt-4">
       <div class="container">
         <b-container fluid="lg" class="mb-5">
           <MapAndDate />
@@ -14,7 +14,6 @@ doc    <div class="pt-4">
 <script>
 import MapAndDate from "@/components/MapAndDate.vue";
 import Transportation from "@/components/Transportation.vue";
-
 
 export default {
   name: "WeddingInfo",
